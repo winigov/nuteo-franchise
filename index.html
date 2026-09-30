@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Черновик для согласования: закрыт от поисковиков. Уберите эту строку при публикации на боевом домене. -->
+  <meta name="robots" content="noindex">
+  <title>Франшиза nuteo — семейное десертное кафе</title>
+  <meta name="description" content="Франшиза nuteo: сеть семейных десертных кафе выше среднего сегмента. 7 кафе в трёх городах, культовые десерты, меню на весь день и готовый фирменный стиль. Получите финансовую модель под ваш город.">
+  <meta name="theme-color" content="#E20014">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Франшиза nuteo — семейное десертное кафе">
+  <meta property="og:description" content="Откройте кафе, где каждый день — маленький праздник. 7 кафе в трёх городах, готовый бренд и меню на весь день.">
+  <meta property="og:image" content="assets/img/og.jpg">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Фирменные шрифты — Favorit Pro и Formular (коммерческие). После покупки веб-лицензии
+       подключите их через @font-face в styles.css; до этого работает близкий по рисунку Onest. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="preload" as="image" href="assets/img/interior.webp" imagesrcset="assets/img/interior-900.webp 900w, assets/img/interior.webp 1600w" imagesizes="(min-width: 1024px) 48vw, 100vw">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // .js включает анимации. Если у посетителя в системе стоит «уменьшить движение»,
+    // добавляется .calm: остаются только мягкие проявления, без сдвигов и параллакса.
+    // Параметр ?motion=on в адресе показывает полную версию независимо от настройки.
+    (function (d) {
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var forced = /[?&]motion=on\b/.test(location.search);
+      d.classList.add('js');
+      if (reduce && !forced) d.classList.add('calm');
+      setTimeout(function () { if (!window.nuteoReady) d.classList.remove('js'); }, 4000);
+    })(document.documentElement);
+  </script>
+</head>
+<body>
+  <!-- В текстах стоят неразрывные пробелы (U+00A0) перед тире и после коротких предлогов,
+       чтобы они не повисали в конце строки. При правке текста сохраняйте их. -->
+  <a class="skip" href="#main">К содержанию</a>
+
+  <header class="header">
+    <div class="container header__row">
+      <a class="header__logo" href="#top" aria-label="nuteo — в начало страницы">
+        <img src="assets/logo.svg" alt="nuteo" width="124" height="36">
+      </a>
+      <nav class="nav" id="nav" aria-label="Разделы страницы">
+        <a href="#concept">Концепция</a>
+        <a href="#product">Продукт</a>
+        <a href="#brand">Бренд</a>
+        <a href="#package">Что входит</a>
+        <a href="#steps">Этапы</a>
+        <a href="#faq">Вопросы</a>
+      </nav>
+      <a class="btn btn--sm header__cta" href="#apply">Получить финмодель</a>
+      <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ───────── Первый экран ───────── -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="tag"><img src="assets/module-red.svg" alt="" width="16" height="16">Франшиза семейного десертного кафе</p>
+          <h1><span class="line"><span>Откройте кафе,</span></span><span class="line"><span>где каждый день —</span></span><span class="line red"><span>маленький праздник</span></span></h1>
+          <p class="lead">nuteo — сеть семейных десертных кафе выше среднего сегмента: культовые вафли и блины, меню на весь день и бренд, который узнают с первого стаканчика. Ищем партнёров, чтобы открыть следующее кафе — в вашем городе.</p>
+          <div class="hero__actions">
+            <a class="btn" href="#apply">Получить финмодель</a>
+            <a class="btn btn--ghost" href="#concept">Смотреть концепцию</a>
+          </div>
+        </div>
+
+        <div class="hero__media">
+          <div class="hero__frame" data-scroll>
+            <img class="hero__img"
+               src="assets/img/interior.webp"
+               srcset="assets/img/interior-900.webp 900w, assets/img/interior.webp 1600w"
+               sizes="(min-width: 1024px) 48vw, 100vw"
+               width="1600" height="1191"
+               alt="Интерьер кафе nuteo: красно-белый зал, семьи с детьми за столами, на стене большая буква n">
+          </div>
+          <div class="rosette hero__rosette" aria-hidden="true">
+            <span><b>7</b>кафе<br>в 3 городах</span>
+          </div>
+          <p class="hero__note">Зал · навынос · доставка</p>
+        </div>
+      </div>
+
+      <div class="container">
+        <dl class="stats">
+          <div data-reveal="up"><dt data-count="7">7</dt><dd>кафе сети уже работают</dd></div>
+          <div data-reveal="up"><dt data-count="3">3</dt><dd>города: Махачкала, Каспийск, Кизляр</dd></div>
+          <div data-reveal="up"><dt data-count="8">8</dt><dd>категорий меню — от завтраков до десертов</dd></div>
+          <div data-reveal="up"><dt data-count="30" data-suffix="+">30+</dt><dd>носителей фирменного стиля готовы к запуску</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ───────── Бегущая строка ───────── -->
+    <div class="ticker scallop-both" aria-hidden="true">
+      <div class="ticker__track">
+        <span>вафли</span><i></i><span>блины</span><i></i><span>панкейки</span><i></i><span>мороженое</span><i></i><span>пончики</span><i></i><span>сырники</span><i></i><span>завтраки</span><i></i><span>кофе</span><i></i><span>лимонады</span><i></i><span>бабл-ти</span><i></i>
+        <span>вафли</span><i></i><span>блины</span><i></i><span>панкейки</span><i></i><span>мороженое</span><i></i><span>пончики</span><i></i><span>сырники</span><i></i><span>завтраки</span><i></i><span>кофе</span><i></i><span>лимонады</span><i></i><span>бабл-ти</span><i></i>
+      </div>
+    </div>
+
+    <!-- ───────── Концепция ───────── -->
+    <section class="section" id="concept">
+      <div class="container">
+        <span class="deco deco--corner" aria-hidden="true"><img src="assets/module-gray.svg" alt="" width="200" height="203"></span>
+        <div class="head">
+          <p class="tag" data-reveal="up"><img src="assets/module-red.svg" alt="" width="16" height="16">Концепция</p>
+          <h2>Мы превращаем обычный день в&nbsp;маленький праздник</h2>
+          <p class="lead" data-reveal="up">Это суть бренда и причина, по которой гости возвращаются. В nuteo заходят на завтрак, забегают за кофе с вафлей, встречаются с друзьями и приводят детей на день рождения.</p>
+        </div>
+
+        <ul class="values" data-scroll>
+          <li class="value" data-reveal="up">
+            <span class="value__num">01</span>
+            <h3>Забота</h3>
+            <p>Семейный формат: детские блюда и напитки, кидс-боксы с игрушкой, место для коляски. Родителям спокойно, детям интересно.</p>
+          </li>
+          <li class="value" data-reveal="up">
+            <span class="value__num">02</span>
+            <h3>Качество</h3>
+            <p>Единый продукт и предсказуемый результат: гость получает тот же вкус и ту же подачу в любом кафе сети.</p>
+          </li>
+          <li class="value" data-reveal="up">
+            <span class="value__num">03</span>
+            <h3>Сервис</h3>
+            <p>Гость выбирает, как ему удобно: за столиком, с собой или с доставкой. Для каждого сценария есть своя упаковка.</p>
+          </li>
+          <li class="value value--red" data-reveal="up">
+            <span class="value__num">04</span>
+            <h3>Впечатления</h3>
+            <p>Яркий зал, подача, упаковка и мерч, которые хочется сфотографировать и показать друзьям.</p>
+          </li>
+        </ul>
+
+        <div class="character" data-reveal="up">
+          <p class="character__label">Характер бренда</p>
+          <ul>
+            <li data-reveal="pop">Яркий</li><li data-reveal="pop">Семейный</li><li data-reveal="pop">Современный</li><li data-reveal="pop">Эмоциональный</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── Видео-сцена: кидс-бокс ─────────
+         Ролик разложен на кадры (assets/video/box/001.webp …); пока сцена закреплена на экране, прокрутка листает их.
+         data-frames — число кадров, data-still — кадр для спокойного режима и для браузеров без скриптов. -->
+    <section class="cinema" data-frames="61" data-src="assets/video/box" data-still="1">
+      <div class="cinema__stage">
+        <div class="cinema__media">
+          <img src="assets/video/box/001.webp" alt="Кидс-бокс nuteo: красная коробка с ручкой, в окошке банка шоколадной пасты и кружка" width="1280" height="720" loading="lazy">
+          <canvas aria-hidden="true"></canvas>
+        </div>
+        <div class="cinema__text">
+          <p class="tag tag--white" data-reveal="up"><img src="assets/module-red.svg" alt="" width="16" height="16">Семейный формат</p>
+          <h2>Маленький праздник помещается в коробку</h2>
+          <p class="lead" data-reveal="up">Кидс-бокс, подарочный сертификат, детский день рождения — у семьи всегда есть повод вернуться.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── Продукт ───────── -->
+    <section class="section section--gray" id="product">
+      <div class="container">
+        <div class="head">
+          <p class="tag tag--white" data-reveal="up"><img src="assets/module-red.svg" alt="" width="16" height="16">Продукт</p>
+          <h2>Десерт — повод зайти. Меню на весь день — повод остаться</h2>
+          <p class="lead" data-reveal="up">Культовые вафли и блины приводят гостя. Завтраки, кухня и напитки загружают зал с утра до вечера.</p>
+        </div>
+
+        <div class="product">
+          <figure class="product__photo" data-reveal="scale" data-scroll>
+            <img src="assets/img/waffle-box.webp" width="1600" height="1067" loading="lazy" alt="Вафля с ягодами и мороженым в фирменной коробке nuteo">
+          </figure>
+
+          <ol class="dayparts">
+            <li class="daypart" data-reveal="right">
+              <span class="daypart__when">Утро</span>
+              <div>
+                <h3>Завтраки</h3>
+                <p>Комбо-завтраки, каши, сырники, перекусы. Кофе и фреши.</p>
+              </div>
+            </li>
+            <li class="daypart" data-reveal="right">
+              <span class="daypart__when">День</span>
+              <div>
+                <h3>Кухня</h3>
+                <p>Горячие блюда, пасты, боулы, бургеры, пицца, салаты и супы.</p>
+              </div>
+            </li>
+            <li class="daypart" data-reveal="right">
+              <span class="daypart__when">Вечер</span>
+              <div>
+                <h3>Десерты и напитки</h3>
+                <p>Венские, гонконгские и баварские вафли, блины, панкейки, пончики, мороженое. Лимонады, коктейли, смузи и бабл-ти.</p>
+              </div>
+            </li>
+            <li class="daypart" data-reveal="right">
+              <span class="daypart__when">Выходные</span>
+              <div>
+                <h3>Семейные поводы</h3>
+                <p>Детские праздники, встречи с друзьями и подарки: сертификаты и кидс-боксы.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <div class="channels">
+          <h3 class="channels__title" data-reveal="up">Шесть источников выручки в одном кафе</h3>
+          <ul>
+            <li data-reveal="pop">Зал</li>
+            <li data-reveal="pop">Навынос</li>
+            <li data-reveal="pop">Доставка</li>
+            <li data-reveal="pop">Детские праздники</li>
+            <li data-reveal="pop">Подарочные сертификаты</li>
+            <li data-reveal="pop">Мерч</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── Бренд ───────── -->
+    <section class="section" id="brand">
+      <div class="container">
+        <div class="head head--split">
+          <div>
+            <p class="tag" data-reveal="up"><img src="assets/module-red.svg" alt="" width="16" height="16">Бренд</p>
+            <h2>Готовая айдентика — от&nbsp;стаканчика до&nbsp;биллборда</h2>
+          </div>
+          <p class="lead" data-reveal="up">Вам не нужно придумывать, как выглядит кафе, упаковка и реклама. Более 30 носителей уже разработаны в единой системе: красный, чёрный и белый, фирменный паттерн и узнаваемый волнистый край.</p>
+        </div>
+
+        <div class="bento">
+          <figure class="bento__item bento__item--7" data-reveal="scale" data-scroll>
+            <img src="assets/img/bags.webp" width="1400" height="1045" loading="lazy" alt="Бумажные пакеты nuteo с волнистым краем и красными ручками">
+            <figcaption>Упаковка навынос</figcaption>
+          </figure>
+          <figure class="bento__item bento__item--5" data-reveal="scale" data-scroll>
+            <img src="assets/img/apron.webp" width="1400" height="781" loading="lazy" alt="Красный фартук с логотипом nuteo">
+            <figcaption>Форма персонала</figcaption>
+          </figure>
+          <figure class="bento__item bento__item--4" data-reveal="scale" data-scroll>
+            <img src="assets/img/paper-cups.webp" width="1400" height="798" loading="lazy" alt="Бумажные стаканы nuteo с фирменным паттерном">
+            <figcaption>Стаканы</figcaption>
+          </figure>
+          <figure class="bento__item bento__item--4" data-reveal="scale" data-scroll>
+            <img src="assets/img/kids.webp" width="1400" height="788" loading="lazy" alt="Девочка играет с бусинами из набора nuteo">
+            <figcaption>Кидс-бокс и игрушки</figcaption>
+          </figure>
+          <figure class="bento__item bento__item--4" data-reveal="scale" data-scroll>
+            <img src="assets/img/posters.webp" width="1400" height="781" loading="lazy" alt="Постеры nuteo в световых панелях: «За сладким настроением»">
+            <figcaption>Постеры и реклама</figcaption>
+          </figure>
+          <figure class="bento__item bento__item--5" data-reveal="scale" data-scroll>
+            <img src="assets/img/city-bench.webp" width="1400" height="939" loading="lazy" alt="Фирменная скамья nuteo в городском парке">
+            <figcaption>Городская среда</figcaption>
+          </figure>
+          <figure class="bento__item bento__item--7" data-reveal="scale" data-scroll>
+            <img src="assets/img/picnic.webp" width="1400" height="781" loading="lazy" alt="Пикник на фирменном пледе nuteo с корзинкой">
+            <figcaption>Мерч для гостей</figcaption>
+          </figure>
+          <figure class="bento__item bento__item--4" data-reveal="scale" data-scroll>
+            <img src="assets/img/hours-sign.webp" width="1400" height="781" loading="lazy" alt="Табличка с режимом работы nuteo на двери кафе">
+            <figcaption>Навигация</figcaption>
+          </figure>
+          <figure class="bento__item bento__item--4" data-reveal="scale" data-scroll>
+            <img src="assets/img/certificate.webp" width="1400" height="933" loading="lazy" alt="Подарочный сертификат nuteo в конверте">
+            <figcaption>Подарочные сертификаты</figcaption>
+          </figure>
+          <figure class="bento__item bento__item--4" data-reveal="scale" data-scroll>
+            <img src="assets/img/takeaway.webp" width="1400" height="933" loading="lazy" alt="Вафлю в коробке кладут в фирменный пакет nuteo">
+            <figcaption>Заказы с собой</figcaption>
+          </figure>
+        </div>
+
+        <ul class="carriers">
+          <li data-reveal="up"><h3>Упаковка</h3><p>Пакеты, стаканы для горячих и холодных напитков, креманки, коробки, упаковка для вафель и блинов, салфетки.</p></li>
+          <li data-reveal="up"><h3>Команда</h3><p>Футболки, фартуки и головные уборы в фирменных цветах.</p></li>
+          <li data-reveal="up"><h3>Зал</h3><p>Экранное и бумажное меню, ценники, навигация, табличка с режимом работы.</p></li>
+          <li data-reveal="up"><h3>Реклама</h3><p>Постеры, макет биллборда 6×3, оформление соцсетей.</p></li>
+          <li data-reveal="up"><h3>Город</h3><p>Стоянка для колясок и велосипедов, фирменные арт-объекты.</p></li>
+          <li data-reveal="up"><h3>Мерч</h3><p>Шопперы, стикеры, брелоки, панамы, термосы, пледы для пикника.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ───────── Что получает партнёр ───────── -->
+    <section class="section section--tight-top" id="package">
+      <div class="container package">
+        <div class="package__head">
+          <p class="tag" data-reveal="up"><img src="assets/module-red.svg" alt="" width="16" height="16">Что входит</p>
+          <h2>Вы открываете кафе. Систему мы уже собрали</h2>
+          <p class="lead" data-reveal="up">Партнёр получает не вывеску, а работающую модель: продукт, стандарты, бренд и людей, которые уже открыли семь кафе.</p>
+          <a class="btn" href="#apply" data-reveal="up">Обсудить открытие</a>
+        </div>
+
+        <ol class="package__list">
+          <li data-reveal="up">
+            <h3>Бренд и название</h3>
+            <p>Право работать под зарегистрированным названием nuteo и быть частью сети, которую уже знают.</p>
+          </li>
+          <li data-reveal="up">
+            <h3>Фирменный стиль и макеты</h3>
+            <p>Логотип, цвета, шрифты, паттерн и макеты более 30 носителей — от упаковки до наружной рекламы.</p>
+          </li>
+          <li data-reveal="up">
+            <h3>Меню и стандарты</h3>
+            <p>Рецептуры, технологические карты и стандарты подачи, по которым работают кафе сети.</p>
+          </li>
+          <li data-reveal="up">
+            <h3>Концепция зала</h3>
+            <p>Интерьер в фирменном стиле: планировка, материалы, свет, детская и семейная зоны.</p>
+          </li>
+          <li data-reveal="up">
+            <h3>Обучение команды</h3>
+            <p>Готовим управляющего, кухню и зал к работе по стандартам nuteo до открытия.</p>
+          </li>
+          <li data-reveal="up">
+            <h3>Маркетинг запуска</h3>
+            <p>Макеты для открытия, наружной рекламы и соцсетей. Объясняем, как привести первых гостей.</p>
+          </li>
+          <li data-reveal="up">
+            <h3>Сопровождение</h3>
+            <p>Остаёмся на связи после открытия: помогаем с меню, сезонными новинками и качеством.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ───────── Условия ───────── -->
+    <section class="terms scallop-both" id="terms" data-scroll>
+      <div class="container">
+        <div class="head head--center">
+          <p class="tag tag--dark" data-reveal="up"><img src="assets/module-red.svg" alt="" width="16" height="16">Условия</p>
+          <h2>Цифры — в финансовой модели</h2>
+          <p class="lead" data-reveal="up">Экономика кафе зависит от города, площади и помещения. Поэтому мы не публикуем усреднённые цифры, а считаем модель под ваш случай.</p>
+        </div>
+
+        <!-- Когда условия утверждены, впишите значения в пустые <b class="term__value"></b> — они появятся крупно над названием. -->
+        <ul class="terms__grid">
+          <li class="term" data-reveal="up"><b class="term__value"></b><h3>Инвестиции на открытие</h3><p>Ремонт, оборудование, мебель, первая закупка и запуск.</p></li>
+          <li class="term" data-reveal="up"><b class="term__value"></b><h3>Паушальный взнос</h3><p>Разовый платёж за вход в сеть и пакет запуска.</p></li>
+          <li class="term" data-reveal="up"><b class="term__value"></b><h3>Роялти</h3><p>Регулярный платёж за бренд, стандарты и сопровождение.</p></li>
+          <li class="term" data-reveal="up"><b class="term__value"></b><h3>Срок окупаемости</h3><p>Расчёт по месяцам с учётом выхода на плановую выручку.</p></li>
+          <li class="term" data-reveal="up"><b class="term__value"></b><h3>Требования к помещению</h3><p>Площадь, расположение, посадка и технические условия.</p></li>
+          <li class="term" data-reveal="up"><b class="term__value"></b><h3>План выручки и расходов</h3><p>Прогноз по каналам: зал, навынос, доставка, праздники.</p></li>
+        </ul>
+
+        <div class="terms__cta" data-reveal="up">
+          <a class="btn btn--white" href="#apply">Получить расчёт под мой город</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── Этапы ───────── -->
+    <section class="section" id="steps">
+      <div class="container">
+        <span class="deco deco--corner" aria-hidden="true"><img src="assets/module-gray.svg" alt="" width="200" height="203"></span>
+        <div class="head">
+          <p class="tag" data-reveal="up"><img src="assets/module-red.svg" alt="" width="16" height="16">Этапы</p>
+          <h2>Шесть шагов от заявки до первых гостей</h2>
+        </div>
+
+        <ol class="steps">
+          <li class="step" data-reveal="up"><span class="step__num">1</span><h3>Заявка</h3><p>Оставляете контакты и город, в котором хотите открыть кафе.</p></li>
+          <li class="step" data-reveal="up"><span class="step__num">2</span><h3>Знакомство</h3><p>Созваниваемся, рассказываем о сети и отвечаем на вопросы.</p></li>
+          <li class="step" data-reveal="up"><span class="step__num">3</span><h3>Финмодель</h3><p>Считаем экономику под ваш город и помещение.</p></li>
+          <li class="step" data-reveal="up"><span class="step__num">4</span><h3>Договор</h3><p>Фиксируем условия сотрудничества и план запуска.</p></li>
+          <li class="step" data-reveal="up"><span class="step__num">5</span><h3>Подготовка</h3><p>Помещение, ремонт по концепции, оборудование, команда и обучение.</p></li>
+          <li class="step" data-reveal="up"><span class="step__num">6</span><h3>Открытие</h3><p>Запускаем кафе вместе и остаёмся рядом после старта.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ───────── География ───────── -->
+    <section class="section section--gray" id="geo">
+      <div class="container geo">
+        <div class="geo__copy">
+          <p class="tag tag--white" data-reveal="up"><img src="assets/module-red.svg" alt="" width="16" height="16">География</p>
+          <h2>Начали в Дагестане. Следующее кафе — в вашем городе</h2>
+          <blockquote class="geo__quote" data-reveal="left">
+            <p>Стать самой узнаваемой региональной сетью семейных десертных кафе, готовой к масштабированию в другие регионы и за пределы страны — без потери вкуса и статуса.</p>
+            <footer>Видение nuteo</footer>
+          </blockquote>
+        </div>
+
+        <div class="geo__list">
+          <div class="city" data-reveal="scale">
+            <h3>Махачкала <span>5 кафе</span></h3>
+            <ul>
+              <li>Расула Гамзатова, 4</li>
+              <li>Имама Шамиля, 57</li>
+              <li>Коркмасова, 3</li>
+              <li>Магомедтагирова, 163г</li>
+              <li>Бабаюртовская, 1</li>
+            </ul>
+          </div>
+          <div class="city" data-reveal="scale">
+            <h3>Каспийск <span>1 кафе</span></h3>
+            <ul><li>Халилова, 44а</li></ul>
+          </div>
+          <div class="city" data-reveal="scale">
+            <h3>Кизляр <span>1 кафе</span></h3>
+            <ul><li>Герцена, 60</li></ul>
+          </div>
+          <a class="city city--yours" data-reveal="scale" href="#apply">
+            <h3>Ваш город</h3>
+            <p>Рассматриваем заявки из регионов России и из‑за рубежа.</p>
+            <span class="city__arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── Вопросы ───────── -->
+    <section class="section" id="faq">
+      <div class="container faq">
+        <div class="faq__head">
+          <p class="tag" data-reveal="up"><img src="assets/module-red.svg" alt="" width="16" height="16">Вопросы</p>
+          <h2>Коротко о&nbsp;главном</h2>
+          <span class="deco deco--faq" aria-hidden="true"><img src="assets/module-red.svg" alt="" width="200" height="203"></span>
+        </div>
+        <div class="faq__list">
+          <details class="qa" data-reveal="up" open>
+            <summary>Что уже готово к запуску?</summary>
+            <p>Бренд с зарегистрированным названием, меню, которое работает в семи кафе, концепция интерьера и более 30 носителей фирменного стиля — от упаковки до наружной рекламы.</p>
+          </details>
+          <details class="qa" data-reveal="up">
+            <summary>Сколько нужно инвестиций?</summary>
+            <p>Сумма зависит от города, площади и состояния помещения. Мы считаем её под ваш случай и присылаем в финансовой модели — вместе с паушальным взносом, роялти и сроком окупаемости.</p>
+          </details>
+          <details class="qa" data-reveal="up">
+            <summary>Это кофейня или кафе?</summary>
+            <p>Семейное кафе полного дня. В основе — десерты, вокруг них завтраки, кухня и большая карта напитков. Гости едят в зале, берут с собой и заказывают доставку.</p>
+          </details>
+          <details class="qa" data-reveal="up">
+            <summary>В каких городах можно открыться?</summary>
+            <p>Сейчас nuteo работает в Махачкале, Каспийске и Кизляре. Мы рассматриваем заявки из других регионов России и из‑за рубежа.</p>
+          </details>
+          <details class="qa" data-reveal="up">
+            <summary>Можно ли менять меню и оформление?</summary>
+            <p>Ядро меню и фирменный стиль едины для всей сети: так гость получает предсказуемое качество в каждом кафе. Локальные дополнения обсуждаем отдельно.</p>
+          </details>
+          <details class="qa" data-reveal="up">
+            <summary>Как получить расчёт?</summary>
+            <p>Оставьте заявку в форме ниже. Мы свяжемся, уточним город и помещение и пришлём финансовую модель.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── Видео-сцена: пакет навынос ─────────
+         Ролик разложен на кадры (assets/video/bag/001.webp …); пока сцена закреплена на экране, прокрутка листает их.
+         data-frames — число кадров, data-still — кадр для спокойного режима и для браузеров без скриптов. -->
+    <section class="cinema cinema--dark" data-frames="35" data-src="assets/video/bag" data-still="33">
+      <div class="cinema__stage">
+        <div class="cinema__media">
+          <img src="assets/video/bag/033.webp" alt="В фирменный пакет nuteo кладут коробку с вафлей" width="1280" height="720" loading="lazy">
+          <canvas aria-hidden="true"></canvas>
+        </div>
+        <div class="cinema__text">
+          <p class="tag tag--dark" data-reveal="up"><img src="assets/module-red.svg" alt="" width="16" height="16">Навынос</p>
+          <h2>Следующий пакет nuteo вынесут из вашего кафе</h2>
+          <p class="lead" data-reveal="up">Бренд, упаковка и меню готовы. Не хватает только вашего города.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── Заявка ───────── -->
+    <section class="apply scallop-top" id="apply" data-scroll>
+      <div class="container apply__grid">
+        <div class="apply__copy">
+          <img class="apply__logo" data-reveal="pop" src="assets/logo-sticker.svg" alt="nuteo" width="220" height="74">
+          <h2>Откроем nuteo в&nbsp;вашем городе?</h2>
+          <p class="lead" data-reveal="up">Оставьте заявку — расскажем об условиях и пришлём финансовую модель под ваш город.</p>
+          <p class="apply__alt" data-reveal="up">Или напишите напрямую:<br>
+            <a href="https://wa.me/79894788585" target="_blank" rel="noopener">WhatsApp</a> · <a href="tel:+79894788585">+7 989 478-85-85</a>
+          </p>
+        </div>
+
+        <form class="form" id="lead-form" novalidate data-reveal="up">
+          <div class="form__fields">
+            <label class="field">
+              <span>Имя</span>
+              <input type="text" name="name" autocomplete="name" required placeholder="Как к вам обращаться">
+            </label>
+            <label class="field">
+              <span>Телефон</span>
+              <input type="tel" name="phone" autocomplete="tel" inputmode="tel" required placeholder="+7 900 000-00-00">
+            </label>
+            <label class="field">
+              <span>Город</span>
+              <input type="text" name="city" autocomplete="address-level2" required placeholder="Где хотите открыть кафе">
+            </label>
+            <label class="field">
+              <span>Комментарий <em>— необязательно</em></span>
+              <textarea name="comment" rows="2" placeholder="Есть ли помещение, опыт в общепите, сроки"></textarea>
+            </label>
+            <!-- Перед публикацией добавьте ссылку на политику обработки персональных данных. -->
+            <label class="check">
+              <input type="checkbox" name="consent" required>
+              <span>Согласен на обработку персональных данных</span>
+            </label>
+            <p class="form__error" role="alert" hidden></p>
+            <button class="btn btn--block" type="submit">Получить финмодель</button>
+            <p class="form__hint"></p>
+          </div>
+          <div class="form__done" hidden>
+            <div class="rosette rosette--sm" aria-hidden="true"><span>✓</span></div>
+            <h3></h3>
+            <p></p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <img src="assets/logo-sticker.svg" alt="nuteo" width="150" height="51" loading="lazy">
+        <p>Сеть семейных десертных кафе. Еда, десерты и напитки.</p>
+      </div>
+      <div>
+        <h3>Франшиза</h3>
+        <ul>
+          <li><a href="tel:+79894788585">+7 989 478-85-85</a></li>
+          <li><a href="https://wa.me/79894788585" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="#apply">Оставить заявку</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Сеть</h3>
+        <ul>
+          <li><a href="https://nuteo.ru" target="_blank" rel="noopener">nuteo.ru</a></li>
+          <li><a href="https://www.instagram.com/nuteorussia/" target="_blank" rel="noopener">@nuteorussia в Instagram*</a></li>
+          <li>Махачкала · Каспийск · Кизляр</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer__legal">
+      <p>© <span id="year">2026</span> nuteo. Информация на странице не является публичной офертой.</p>
+      <p>* Instagram принадлежит компании Meta, которая признана экстремистской организацией и запрещена в России.</p>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
