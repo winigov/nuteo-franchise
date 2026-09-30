@@ -58,11 +58,11 @@
         <img src="assets/logo.svg" alt="nuteo" width="124" height="36">
       </a>
       <nav class="nav" id="nav" aria-label="Разделы страницы">
+        <a href="#economics">Экономика</a>
         <a href="#concept">Концепция</a>
         <a href="#product">Продукт</a>
         <a href="#brand">Бренд</a>
         <a href="#package">Что входит</a>
-        <a href="#economics">Экономика</a>
         <a href="#steps">Этапы</a>
         <a href="#faq">Вопросы</a>
       </nav>
@@ -99,7 +99,7 @@
           <h1><span class="line"><span>Откройте кафе,</span></span><span class="line"><span>где каждый день —</span></span><span class="line red"><span>маленький праздник</span></span></h1>
           <div class="hero__actions">
             <a class="btn" href="#apply">Получить финмодель</a>
-            <a class="btn btn--ghost" href="#concept">Смотреть концепцию</a>
+            <a class="btn btn--ghost" href="#economics">Смотреть экономику</a>
           </div>
         </div>
       </div>
@@ -122,6 +122,67 @@
         <span>вафли</span><i></i><span>блины</span><i></i><span>панкейки</span><i></i><span>мороженое</span><i></i><span>пончики</span><i></i><span>сырники</span><i></i><span>завтраки</span><i></i><span>кофе</span><i></i><span>лимонады</span><i></i><span>бабл-ти</span><i></i>
       </div>
     </div>
+
+    <!-- ───────── Экономика ─────────
+         ВНИМАНИЕ: цифры в этом блоке условные. Они считаются из демо-модели в charts.js и не являются
+         показателями сети. Перед публикацией замените MODEL в charts.js реальными данными
+         и уберите пометку «Пример расчёта» (.demo-note). Значения в плитках ниже подставляет charts.js. -->
+    <section class="section section--gray economics" id="economics">
+      <div class="container">
+        <div class="head head--split">
+          <div>
+            <p class="tag tag--white" data-reveal="up"><img src="assets/module-red.svg" alt="" width="16" height="16">Экономика</p>
+            <h2>Как зарабатывает одно кафе nuteo</h2>
+          </div>
+          <p class="lead" data-reveal="up">Разбираем на примере: кафе 120 м² на 50 мест, которое работает с 9 до 23.</p>
+        </div>
+
+        <div class="economics__bar" data-reveal="up">
+          <p class="demo-note"><b>Пример расчёта.</b> Цифры условные: они показывают, как устроена модель, и не являются отчётностью сети. Расчёт под ваш город и помещение пришлём по заявке.</p>
+          <a class="btn btn--sm" href="#apply">Получить расчёт под мой город</a>
+        </div>
+
+        <dl class="kpis">
+          <div class="kpi" data-reveal="up"><dt>Выручка в месяц</dt><dd data-kpi="revenue">4,8 млн ₽</dd></div>
+          <div class="kpi kpi--accent" data-reveal="up"><dt>Прибыль в месяц</dt><dd data-kpi="profit">1,0 млн ₽</dd></div>
+          <div class="kpi" data-reveal="up"><dt>Окупаемость</dt><dd data-kpi="payback">20 мес.</dd></div>
+          <div class="kpi" data-reveal="up"><dt>Вложения на открытие</dt><dd data-kpi="investment">15 млн ₽</dd></div>
+          <div class="kpi" data-reveal="up"><dt>Средний чек</dt><dd data-kpi="check">800 ₽</dd></div>
+          <div class="kpi" data-reveal="up"><dt>Чеков в день</dt><dd data-kpi="checks">200</dd></div>
+        </dl>
+
+        <div class="charts">
+          <figure class="chart" data-chart="ramp" data-reveal="up">
+            <figcaption>
+              <h3>Выручка выходит на план к 8-му месяцу</h3>
+              <p>Выручка по месяцам работы, млн ₽</p>
+            </figcaption>
+            <div class="chart__plot"></div>
+          </figure>
+          <figure class="chart" data-chart="payback" data-reveal="up">
+            <figcaption>
+              <h3>Вложения возвращаются на 20-й месяц</h3>
+              <p>Накопленный денежный поток по месяцам работы, млн ₽</p>
+            </figcaption>
+            <div class="chart__plot"></div>
+          </figure>
+          <figure class="chart" data-chart="hours" data-reveal="up">
+            <figcaption>
+              <h3>Гости идут весь день, пик — в 19:00</h3>
+              <p>Чеков в час в обычный день</p>
+            </figcaption>
+            <div class="chart__plot"></div>
+          </figure>
+          <figure class="chart" data-chart="costs" data-reveal="up">
+            <figcaption>
+              <h3>Прибыль — 21% выручки</h3>
+              <p>На что уходит выручка кафе на плановой загрузке</p>
+            </figcaption>
+            <div class="chart__plot"></div>
+          </figure>
+        </div>
+      </div>
+    </section>
 
     <!-- ───────── Концепция ───────── -->
     <section class="section has-doodles" id="concept">
@@ -373,62 +434,6 @@
       </div>
     </section>
 
-    <!-- ───────── Экономика ─────────
-         ВНИМАНИЕ: цифры в этом блоке условные. Они считаются из демо-модели в charts.js и не являются
-         показателями сети. Перед публикацией замените MODEL в charts.js реальными данными
-         и уберите пометку «Пример расчёта» (.demo-note). Значения в плитках ниже подставляет charts.js. -->
-    <section class="section section--gray economics" id="economics">
-      <div class="container">
-        <div class="head">
-          <p class="tag tag--white" data-reveal="up"><img src="assets/module-red.svg" alt="" width="16" height="16">Экономика</p>
-          <h2>Как зарабатывает одно кафе nuteo</h2>
-          <p class="lead" data-reveal="up">Разбираем на примере: кафе 120 м² на 50 мест, которое работает с 9 до 23.</p>
-        </div>
-
-        <p class="demo-note" data-reveal="up"><b>Пример расчёта.</b> Цифры условные: они показывают, как устроена модель, и не являются отчётностью сети. Расчёт под ваш город и помещение пришлём по заявке.</p>
-
-        <dl class="kpis">
-          <div class="kpi" data-reveal="up"><dt>Выручка в месяц</dt><dd data-kpi="revenue">4,8 млн ₽</dd></div>
-          <div class="kpi kpi--accent" data-reveal="up"><dt>Прибыль в месяц</dt><dd data-kpi="profit">1,0 млн ₽</dd></div>
-          <div class="kpi" data-reveal="up"><dt>Окупаемость</dt><dd data-kpi="payback">20 мес.</dd></div>
-          <div class="kpi" data-reveal="up"><dt>Вложения на открытие</dt><dd data-kpi="investment">15 млн ₽</dd></div>
-          <div class="kpi" data-reveal="up"><dt>Средний чек</dt><dd data-kpi="check">800 ₽</dd></div>
-          <div class="kpi" data-reveal="up"><dt>Чеков в день</dt><dd data-kpi="checks">200</dd></div>
-        </dl>
-
-        <div class="charts">
-          <figure class="chart" data-chart="ramp" data-reveal="up">
-            <figcaption>
-              <h3>Выручка выходит на план к 8-му месяцу</h3>
-              <p>Выручка по месяцам работы, млн ₽</p>
-            </figcaption>
-            <div class="chart__plot"></div>
-          </figure>
-          <figure class="chart" data-chart="payback" data-reveal="up">
-            <figcaption>
-              <h3>Вложения возвращаются на 20-й месяц</h3>
-              <p>Накопленный денежный поток по месяцам работы, млн ₽</p>
-            </figcaption>
-            <div class="chart__plot"></div>
-          </figure>
-          <figure class="chart" data-chart="hours" data-reveal="up">
-            <figcaption>
-              <h3>Гости идут весь день, пик — в 19:00</h3>
-              <p>Чеков в час в обычный день</p>
-            </figcaption>
-            <div class="chart__plot"></div>
-          </figure>
-          <figure class="chart" data-chart="costs" data-reveal="up">
-            <figcaption>
-              <h3>Прибыль — 21% выручки</h3>
-              <p>На что уходит выручка кафе на плановой загрузке</p>
-            </figcaption>
-            <div class="chart__plot"></div>
-          </figure>
-        </div>
-      </div>
-    </section>
-
     <!-- ───────── Предложение ───────── -->
     <section class="terms scallop-both has-doodles" id="terms" data-scroll>
       <div class="doodles" data-scroll aria-hidden="true">
@@ -442,7 +447,7 @@
         <div class="head head--center">
           <p class="tag tag--dark" data-reveal="up"><img src="assets/module-red.svg" alt="" width="16" height="16">Предложение</p>
           <h2>Посчитаем экономику вашего кафе — бесплатно</h2>
-          <p class="lead" data-reveal="up">Расчёт выше — пример. Оставьте заявку, и мы пришлём финансовую модель под ваш город и помещение.</p>
+          <p class="lead" data-reveal="up">Цифры в блоке «Экономика» — пример. Оставьте заявку, и мы пришлём финансовую модель под ваш город и помещение.</p>
           <ul class="perks" data-reveal="up">
             <li>Бесплатно</li>
             <li>Без обязательств</li>

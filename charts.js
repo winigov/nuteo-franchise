@@ -16,7 +16,7 @@ const MODEL = {
     { name: 'Продукты', share: 0.3, variable: true },
     { name: 'Оплата труда', share: 0.22 },
     { name: 'Аренда', share: 0.09 },
-    { name: 'Прочие расходы', share: 0.06 },
+    { name: 'Прочее', share: 0.06 },
     { name: 'Роялти', share: 0.05, variable: true },
     { name: 'Налоги', share: 0.04, variable: true },
     { name: 'Маркетинг', share: 0.03, variable: true },
@@ -130,7 +130,7 @@ const MODEL = {
   // ── Столбцы: одна серия, одна величина ────
   const drawColumns = (plot, { values, labels, step, labelAt, valueText, tipValue, tipLabel, aria }) => {
     const width = plot.clientWidth;
-    const height = width < 420 ? 210 : 250;
+    const height = width < 420 ? 196 : 250;
     const m = { top: 26, right: 4, bottom: 28, left: 30 };
     const max = Math.ceil(Math.max(...values) / step) * step;
     const svg = node('svg', { viewBox: `0 0 ${width} ${height}`, width, height, role: 'img', 'aria-label': aria });
@@ -152,7 +152,11 @@ const MODEL = {
       });
       svg.append(mark);
       if (i % every === 0) svg.append(node('text', { x: x + bar / 2, y: height - 8, 'text-anchor': 'middle' }, labels[i]));
-      if (labelAt.includes(i)) svg.append(node('text', { class: 'val late', x: x + bar / 2, y: top - 8, 'text-anchor': 'middle' }, valueText(value)));
+      if (labelAt.includes(i)) {
+        // У первого столбца сосед справа выше — подпись прижимаем к правому краю столбца, чтобы не легла на соседа.
+        const crowded = i === 0 && values[1] > value;
+        svg.append(node('text', { class: 'val late', x: crowded ? x + bar : x + bar / 2, y: top - 8, 'text-anchor': crowded ? 'end' : 'middle' }, valueText(value)));
+      }
 
       // Область наведения шире столбца — вся его полоса.
       const hit = node('rect', { class: 'hit', x: m.left + band * i, y: m.top - 10, width: band, height: base - m.top + 10 });
@@ -166,7 +170,7 @@ const MODEL = {
   // ── Линия относительно нуля ───────────────
   const drawLine = (plot, { values, step, mark, aria }) => {
     const width = plot.clientWidth;
-    const height = width < 420 ? 220 : 250;
+    const height = width < 420 ? 196 : 250;
     const m = { top: 18, right: 12, bottom: 28, left: 36 };
     const min = Math.floor(Math.min(...values) / step) * step;
     const max = Math.ceil(Math.max(...values) / step) * step;
