@@ -536,6 +536,47 @@ main { overflow-x: clip; }
   .deco--faq { width: 150px; margin-top: 56px; }
 }
 
+/* ── Рисованные элементы ──────────────────────
+   Сердца, звёзды, росчерки и ленты по мотивам кидс-бокса и подарочного сертификата.
+   Три плана: дальний размыт и отстаёт от прокрутки, ближний резкий и обгоняет её.
+   У каждого элемента: --x/--y — место в секции, --s — ширина (в сотых долях ширины окна),
+   --r — наклон, --w — толщина линии в пикселях, --vb — ширина его viewBox.
+   --py (сдвиг секции от центра окна) и --oy (место элемента в секции) ставит main.js. */
+
+:root { --u: min(1vw, 14.4px); }
+.sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+.has-doodles { position: relative; isolation: isolate; }
+.doodles { position: absolute; inset: 0; pointer-events: none; }
+.doodle {
+  position: absolute; left: var(--x); top: var(--y); width: calc(var(--s) * var(--u)); height: auto; overflow: visible;
+  fill: none; stroke: currentColor; stroke-width: calc(var(--w) * var(--vb) / (var(--s) * 14.4)); stroke-linecap: round; stroke-linejoin: round;
+  color: var(--red);
+  --shift: calc(var(--py, 0) + var(--oy, 0));
+  translate: 0 calc(var(--shift) * var(--k, 0) * 1px);
+  rotate: calc(var(--r, 0deg) + var(--shift) * var(--spin, 0) * 1deg);
+}
+.doodle--far { z-index: -1; filter: blur(7px); opacity: .42; --k: -.1; }
+.doodle--mid { z-index: -1; filter: blur(1.6px); opacity: .8; --k: .07; --spin: .01; }
+.doodle--near { z-index: 2; --k: .2; --spin: .025; }
+.terms .doodle, .apply .doodle { color: var(--white); }
+.terms .doodle--far { opacity: .3; }
+.apply .doodle--far { opacity: .38; }
+.apply::before { content: none; }
+
+/* Акценты у меток разделов — только на телефоне, где ближний план убран */
+.doodle--tag { display: none; }
+
+/* Линия прорисовывается, когда элемент появляется в окне */
+.js .doodle { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.7s var(--ease) var(--d, 0ms); }
+.js .doodle.is-in { stroke-dashoffset: 0; }
+
+@media (max-width: 1023px) {
+  :root { --u: 2vw; }
+  .doodles .doodle--near { display: none; }
+  .head, .geo__copy { position: relative; }
+  .doodle--tag { display: block; left: auto; right: 2px; top: -10px; width: 46px; stroke-width: calc(var(--w) * 100 / 46); rotate: 12deg; }
+}
+
 /* ── Видео-сцены ──────────────────────────────
    Сцена закрепляется под шапкой, и прокрутка листает кадры ролика на canvas.
    Фон сцены подобран под фон ролика, а левый край кадра растворяется в нём,
@@ -574,6 +615,7 @@ main { overflow-x: clip; }
 .calm .carriers li, .calm .package__list li, .calm .qa { background-size: 100% 1.5px; }
 .calm .step[data-reveal] .step__num { scale: 1; rotate: 0deg; transition: none; }
 .calm .ticker__track { animation: none; }
+.calm .doodle { stroke-dashoffset: 0; transition: none; }
 .calm .bento__item img { transition: none; }
 
 @keyframes fade { from { opacity: 0; } }

@@ -49,6 +49,8 @@ const updateScroll = () => {
     const rect = el.getBoundingClientRect();
     const p = (rect.top + rect.height / 2 - vh / 2) / (vh / 2 + rect.height / 2);
     el.style.setProperty('--p', Math.max(-1, Math.min(1, p)).toFixed(4));
+    // Для рисованных элементов: тот же сдвиг, но в пикселях и без ограничения.
+    if (el.classList.contains('doodles')) el.style.setProperty('--py', (rect.top + rect.height / 2 - vh / 2).toFixed(1));
   });
 };
 const requestScrollUpdate = () => {
@@ -65,8 +67,24 @@ if (motion) {
   }, { rootMargin: '20% 0px' });
   document.querySelectorAll('[data-scroll]').forEach((el) => visibility.observe(el));
 }
+// Каждому рисованному элементу — его место в секции (от её середины, в пикселях),
+// чтобы сдвиг считался от центра окна и не зависел от высоты секции.
+const placeDoodles = () => {
+  if (!motion) return;
+  document.querySelectorAll('.doodles').forEach((layer) => {
+    const height = layer.offsetHeight;
+    layer.querySelectorAll('.doodle').forEach((el) => {
+      // Верх задан в процентах через --y; у SVG нет offsetTop, а его рамка уже сдвинута параллаксом.
+      const top = (parseFloat(el.style.getPropertyValue('--y')) / 100) * height;
+      el.style.setProperty('--oy', (top + el.getBoundingClientRect().height / 2 - height / 2).toFixed(1));
+    });
+  });
+};
+placeDoodles();
+window.addEventListener('load', placeDoodles);
+
 window.addEventListener('scroll', requestScrollUpdate, { passive: true });
-window.addEventListener('resize', requestScrollUpdate);
+window.addEventListener('resize', () => { placeDoodles(); requestScrollUpdate(); });
 updateScroll();
 
 // ── Появление блоков ────────────────────────
@@ -101,7 +119,7 @@ if (animated) {
       reveal.unobserve(el);
     });
   }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
-  document.querySelectorAll('[data-reveal], .split').forEach((el) => reveal.observe(el));
+  document.querySelectorAll('[data-reveal], .split, .doodle').forEach((el) => reveal.observe(el));
 }
 
 if (motion) {
