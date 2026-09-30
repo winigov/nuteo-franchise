@@ -62,6 +62,7 @@
         <a href="#product">Продукт</a>
         <a href="#brand">Бренд</a>
         <a href="#package">Что входит</a>
+        <a href="#economics">Экономика</a>
         <a href="#steps">Этапы</a>
         <a href="#faq">Вопросы</a>
       </nav>
@@ -372,7 +373,63 @@
       </div>
     </section>
 
-    <!-- ───────── Условия ───────── -->
+    <!-- ───────── Экономика ─────────
+         ВНИМАНИЕ: цифры в этом блоке условные. Они считаются из демо-модели в charts.js и не являются
+         показателями сети. Перед публикацией замените MODEL в charts.js реальными данными
+         и уберите пометку «Пример расчёта» (.demo-note). Значения в плитках ниже подставляет charts.js. -->
+    <section class="section section--gray economics" id="economics">
+      <div class="container">
+        <div class="head">
+          <p class="tag tag--white" data-reveal="up"><img src="assets/module-red.svg" alt="" width="16" height="16">Экономика</p>
+          <h2>Как зарабатывает одно кафе nuteo</h2>
+          <p class="lead" data-reveal="up">Разбираем на примере: кафе 120 м² на 50 мест, которое работает с 9 до 23.</p>
+        </div>
+
+        <p class="demo-note" data-reveal="up"><b>Пример расчёта.</b> Цифры условные: они показывают, как устроена модель, и не являются отчётностью сети. Расчёт под ваш город и помещение пришлём по заявке.</p>
+
+        <dl class="kpis">
+          <div class="kpi" data-reveal="up"><dt>Выручка в месяц</dt><dd data-kpi="revenue">4,8 млн ₽</dd></div>
+          <div class="kpi kpi--accent" data-reveal="up"><dt>Прибыль в месяц</dt><dd data-kpi="profit">1,0 млн ₽</dd></div>
+          <div class="kpi" data-reveal="up"><dt>Окупаемость</dt><dd data-kpi="payback">20 мес.</dd></div>
+          <div class="kpi" data-reveal="up"><dt>Вложения на открытие</dt><dd data-kpi="investment">15 млн ₽</dd></div>
+          <div class="kpi" data-reveal="up"><dt>Средний чек</dt><dd data-kpi="check">800 ₽</dd></div>
+          <div class="kpi" data-reveal="up"><dt>Чеков в день</dt><dd data-kpi="checks">200</dd></div>
+        </dl>
+
+        <div class="charts">
+          <figure class="chart" data-chart="ramp" data-reveal="up">
+            <figcaption>
+              <h3>Выручка выходит на план к 8-му месяцу</h3>
+              <p>Выручка по месяцам работы, млн ₽</p>
+            </figcaption>
+            <div class="chart__plot"></div>
+          </figure>
+          <figure class="chart" data-chart="payback" data-reveal="up">
+            <figcaption>
+              <h3>Вложения возвращаются на 20-й месяц</h3>
+              <p>Накопленный денежный поток по месяцам работы, млн ₽</p>
+            </figcaption>
+            <div class="chart__plot"></div>
+          </figure>
+          <figure class="chart" data-chart="hours" data-reveal="up">
+            <figcaption>
+              <h3>Гости идут весь день, пик — в 19:00</h3>
+              <p>Чеков в час в обычный день</p>
+            </figcaption>
+            <div class="chart__plot"></div>
+          </figure>
+          <figure class="chart" data-chart="costs" data-reveal="up">
+            <figcaption>
+              <h3>Прибыль — 21% выручки</h3>
+              <p>На что уходит выручка кафе на плановой загрузке</p>
+            </figcaption>
+            <div class="chart__plot"></div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── Предложение ───────── -->
     <section class="terms scallop-both has-doodles" id="terms" data-scroll>
       <div class="doodles" data-scroll aria-hidden="true">
         <svg class="doodle doodle--far" viewBox="0 0 600 220" style="--x:-4%;--y:6%;--s:60;--vb:600;--w:5;--r:-3deg" aria-hidden="true" focusable="false"><use href="#d-ribbon"/></svg>
@@ -383,12 +440,18 @@
       </div>
       <div class="container">
         <div class="head head--center">
-          <p class="tag tag--dark" data-reveal="up"><img src="assets/module-red.svg" alt="" width="16" height="16">Условия</p>
-          <h2>Цифры — в финансовой модели</h2>
-          <p class="lead" data-reveal="up">Экономика кафе зависит от города, площади и помещения. Поэтому мы не публикуем усреднённые цифры, а считаем модель под ваш случай.</p>
+          <p class="tag tag--dark" data-reveal="up"><img src="assets/module-red.svg" alt="" width="16" height="16">Предложение</p>
+          <h2>Посчитаем экономику вашего кафе — бесплатно</h2>
+          <p class="lead" data-reveal="up">Расчёт выше — пример. Оставьте заявку, и мы пришлём финансовую модель под ваш город и помещение.</p>
+          <ul class="perks" data-reveal="up">
+            <li>Бесплатно</li>
+            <li>Без обязательств</li>
+            <li>Под ваш город и помещение</li>
+          </ul>
         </div>
 
         <!-- Когда условия утверждены, впишите значения в пустые <b class="term__value"></b> — они появятся крупно над названием. -->
+        <p class="terms__label" data-reveal="up">Что будет в модели</p>
         <ul class="terms__grid">
           <li class="term" data-reveal="up"><b class="term__value"></b><h3>Инвестиции на открытие</h3><p>Ремонт, оборудование, мебель, первая закупка и запуск.</p></li>
           <li class="term" data-reveal="up"><b class="term__value"></b><h3>Паушальный взнос</h3><p>Разовый платёж за вход в сеть и пакет запуска.</p></li>
@@ -621,6 +684,7 @@
     </div>
   </footer>
 
+  <script src="charts.js" defer></script>
   <script src="main.js" defer></script>
 </body>
 </html>
