@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="preload" as="image" href="assets/img/interior.webp" imagesrcset="assets/img/interior-900.webp 900w, assets/img/interior.webp 1600w" imagesizes="(min-width: 1024px) 48vw, 100vw">
+  <link rel="preload" as="image" href="assets/img/interior.webp" imagesrcset="assets/img/interior-1200.webp 1200w, assets/img/interior.webp 2064w" imagesizes="(max-aspect-ratio: 1/1) 140vh, 100vw">
   <link rel="stylesheet" href="styles.css">
   <script>
     // .js включает анимации. Если у посетителя в системе стоит «уменьшить движение»,
@@ -64,34 +64,30 @@
 
     <!-- ───────── Первый экран ───────── -->
     <section class="hero">
-      <div class="container hero__grid">
-        <div class="hero__copy">
+      <!-- Ключевой визуал: кадр занимает весь первый экран, заголовок — на карточке поверх него -->
+      <div class="hero__stage" data-scroll>
+        <img class="hero__img"
+             src="assets/img/interior.webp"
+             srcset="assets/img/interior-1200.webp 1200w, assets/img/interior.webp 2064w"
+             sizes="(max-aspect-ratio: 1/1) 140vh, 100vw"
+             width="2064" height="1536"
+             alt="Интерьер кафе nuteo: красно-белый зал, семьи с детьми за столами, на стене большая буква n">
+        <div class="rosette hero__rosette" aria-hidden="true">
+          <span><b>7</b>кафе<br>в 3 городах</span>
+        </div>
+        <p class="hero__note">Зал · навынос · доставка</p>
+        <div class="hero__card">
           <p class="tag"><img src="assets/module-red.svg" alt="" width="16" height="16">Франшиза семейного десертного кафе</p>
           <h1><span class="line"><span>Откройте кафе,</span></span><span class="line"><span>где каждый день —</span></span><span class="line red"><span>маленький праздник</span></span></h1>
-          <p class="lead">nuteo — сеть семейных десертных кафе выше среднего сегмента: культовые вафли и блины, меню на весь день и бренд, который узнают с первого стаканчика. Ищем партнёров, чтобы открыть следующее кафе — в вашем городе.</p>
           <div class="hero__actions">
             <a class="btn" href="#apply">Получить финмодель</a>
             <a class="btn btn--ghost" href="#concept">Смотреть концепцию</a>
           </div>
         </div>
-
-        <div class="hero__media">
-          <div class="hero__frame" data-scroll>
-            <img class="hero__img"
-               src="assets/img/interior.webp"
-               srcset="assets/img/interior-900.webp 900w, assets/img/interior.webp 1600w"
-               sizes="(min-width: 1024px) 48vw, 100vw"
-               width="1600" height="1191"
-               alt="Интерьер кафе nuteo: красно-белый зал, семьи с детьми за столами, на стене большая буква n">
-          </div>
-          <div class="rosette hero__rosette" aria-hidden="true">
-            <span><b>7</b>кафе<br>в 3 городах</span>
-          </div>
-          <p class="hero__note">Зал · навынос · доставка</p>
-        </div>
       </div>
 
       <div class="container">
+        <p class="hero__lead" data-reveal="up">nuteo — сеть семейных десертных кафе выше среднего сегмента: культовые вафли и блины, меню на весь день и бренд, который узнают с первого стаканчика. Ищем партнёров, чтобы открыть следующее кафе — в вашем городе.</p>
         <dl class="stats">
           <div data-reveal="up"><dt data-count="7">7</dt><dd>кафе сети уже работают</dd></div>
           <div data-reveal="up"><dt data-count="3">3</dt><dd>города: Махачкала, Каспийск, Кизляр</dd></div>
