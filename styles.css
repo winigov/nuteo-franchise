@@ -441,6 +441,21 @@ p { text-wrap: pretty; }
 .js .to-top { opacity: 0; visibility: hidden; transform: translateY(14px) scale(.85); }
 .js.show-top .to-top { opacity: 1; visibility: visible; transform: none; }
 
+/* ── Плашка «анимация выключена» ──────────── */
+
+.motion-note { display: none; }
+.calm:not(.calm-quiet) .motion-note {
+  position: fixed; left: clamp(10px, 2vw, 28px); bottom: clamp(14px, 2vw, 28px); z-index: 40;
+  display: flex; align-items: center; gap: 6px 12px; max-width: min(620px, calc(100% - 96px));
+  padding: 10px 10px 10px 18px; border-radius: 28px; background: var(--black); color: var(--white);
+  box-shadow: 0 0 0 2px var(--white), 0 10px 28px rgba(0, 0, 0, .22); font-size: .8125rem; line-height: 1.35;
+}
+.motion-note button { flex: none; border: 0; border-radius: 999px; cursor: pointer; font-weight: 500; line-height: 1; }
+.motion-note__on { padding: 11px 16px; background: var(--red); color: var(--white); font-size: .875rem; }
+.motion-note__on:hover { background: var(--white); color: var(--black); }
+.motion-note__off { width: 32px; height: 32px; background: transparent; color: rgba(255, 255, 255, .7); font-size: 1.25rem; }
+.motion-note__off:hover { color: var(--white); }
+
 /* ── Подвал ───────────────────────────────── */
 
 .footer { background: var(--black); color: var(--white); padding-block: 64px 36px; }
@@ -533,6 +548,9 @@ p { text-wrap: pretty; }
   .qa p { padding-right: 0; }
 
   .footer__grid { grid-template-columns: 1fr; gap: 32px; }
+  .calm:not(.calm-quiet) .motion-note { flex-wrap: wrap; padding: 12px 14px; border-radius: 20px; }
+  .motion-note p { flex: 1 1 100%; }
+  .motion-note__off { margin-left: auto; }
   .to-top { width: 48px; height: 48px; }
 }
 

@@ -23,15 +23,22 @@
   <link rel="preload" as="image" href="assets/img/interior.webp" imagesrcset="assets/img/interior-1200.webp 1200w, assets/img/interior.webp 2064w" imagesizes="(max-aspect-ratio: 1/1) 140vh, 100vw">
   <link rel="stylesheet" href="styles.css">
   <script>
-    // .js включает анимации. Если у посетителя в системе стоит «уменьшить движение»,
-    // добавляется .calm: остаются только мягкие проявления, без сдвигов и параллакса.
-    // Параметр ?motion=on в адресе показывает полную версию независимо от настройки.
+    // .js включает анимации. Если на устройстве посетителя включено «уменьшение движения»,
+    // добавляется .calm: блоки только проявляются, видео-сцены показывают один кадр,
+    // а внизу появляется плашка с кнопкой «Включить анимацию» (.motion-note).
+    // Полную версию включают эта кнопка (выбор хранится в localStorage) или ?motion=on в адресе.
     (function (d) {
       var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      var forced = /[?&]motion=on\b/.test(location.search);
+      var saved = null;
+      try { saved = localStorage.getItem('nuteo-motion'); } catch (e) {}
+      var forced = /[?&]motion=on\b/.test(location.search) || saved === 'on';
       d.classList.add('js');
       if (reduce && !forced) d.classList.add('calm');
-      setTimeout(function () { if (!window.nuteoReady) d.classList.remove('js'); }, 4000);
+      if (saved === 'off') d.classList.add('calm-quiet');
+      // Страховка: если main.js не загрузился, показываем страницу без анимаций.
+      var bail = function () { if (!window.nuteoReady) d.classList.remove('js'); };
+      window.addEventListener('load', bail);
+      setTimeout(bail, 12000);
     })(document.documentElement);
   </script>
 </head>
@@ -655,6 +662,13 @@
       </div>
     </section>
   </main>
+
+  <!-- Видна только в спокойном режиме (.calm): объясняет, почему страница не двигается, и даёт это включить -->
+  <div class="motion-note" role="status">
+    <p>Анимация выключена: на устройстве включено «Уменьшение движения».</p>
+    <button class="motion-note__on" type="button">Включить анимацию</button>
+    <button class="motion-note__off" type="button" aria-label="Скрыть сообщение">×</button>
+  </div>
 
   <a class="to-top" href="#top" aria-label="Наверх, к началу страницы">
     <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/></svg>

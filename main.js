@@ -13,6 +13,20 @@ const animated = root.classList.contains('js');
 const motion = animated && !root.classList.contains('calm');
 window.nuteoReady = true;
 
+// Плашка спокойного режима: «Включить анимацию» запоминает выбор и перезагружает страницу,
+// крестик прячет плашку. Без localStorage (частный режим) включаем через параметр в адресе.
+const remember = (value) => {
+  try { localStorage.setItem('nuteo-motion', value); return true; } catch (e) { return false; }
+};
+document.querySelector('.motion-note__on').addEventListener('click', () => {
+  if (remember('on')) location.reload();
+  else location.search = `${location.search ? `${location.search}&` : '?'}motion=on`;
+});
+document.querySelector('.motion-note__off').addEventListener('click', () => {
+  remember('off');
+  root.classList.add('calm-quiet');
+});
+
 // ── Шапка и мобильное меню ──────────────────
 const header = document.querySelector('.header');
 const burger = document.querySelector('.burger');
