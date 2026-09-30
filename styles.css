@@ -352,6 +352,21 @@ p { text-wrap: pretty; }
 .form__done p { margin-top: 10px; color: var(--muted); }
 [hidden] { display: none !important; }
 
+/* ── Кнопка «наверх» ──────────────────────── */
+
+.to-top {
+  position: fixed; right: clamp(14px, 2vw, 28px); bottom: clamp(14px, 2vw, 28px); z-index: 40;
+  display: grid; place-items: center; width: 54px; height: 54px; border-radius: 50%;
+  background: var(--black); color: var(--white); box-shadow: 0 0 0 2px var(--white), 0 10px 28px rgba(0, 0, 0, .22);
+  transition: opacity .3s, transform .3s var(--ease), visibility .3s, background-color .2s;
+}
+.to-top:hover { background: var(--red); }
+.to-top:hover svg { transform: translateY(-2px); }
+.to-top svg { transition: transform .2s; }
+/* Появляется, когда первый экран пролистан; класс .show-top ставит main.js */
+.js .to-top { opacity: 0; visibility: hidden; transform: translateY(14px) scale(.85); }
+.js.show-top .to-top { opacity: 1; visibility: visible; transform: none; }
+
 /* ── Подвал ───────────────────────────────── */
 
 .footer { background: var(--black); color: var(--white); padding-block: 64px 36px; }
@@ -437,6 +452,7 @@ p { text-wrap: pretty; }
   .qa p { padding-right: 0; }
 
   .footer__grid { grid-template-columns: 1fr; gap: 32px; }
+  .to-top { width: 48px; height: 48px; }
 }
 
 /* ── Движение ─────────────────────────────────

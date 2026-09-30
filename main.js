@@ -40,6 +40,7 @@ const updateScroll = () => {
   const max = root.scrollHeight - vh;
 
   header.classList.toggle('is-stuck', y > 8);
+  root.classList.toggle('show-top', y > vh * 0.8);
   root.style.setProperty('--scroll', max > 0 ? (y / max).toFixed(4) : '0');
   if (!motion) return;
 
